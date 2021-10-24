@@ -1,0 +1,74 @@
+﻿@model Clima.Models.PevisaoClima
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Excluir</title>
+</head>
+<body>
+    <h3>Você tem certeza que deseja excluir?</h3>
+    <div>
+        <h4>PevisaoClima</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Clima)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Clima)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CidadeId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CidadeId)
+            </dd>
+    
+            <dt>
+                Data 
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DataPrevisao)
+            </dd>
+    
+            <dt>
+                Temp Min
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TemperaturaMinima)
+            </dd>
+    
+            <dt>
+                Temp Max
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TemperaturaMaxima)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+    <div class="form-actions no-color">
+        <input type="submit" value="Excluir" class="btn btn-default" /> |
+        @Html.ActionLink("Voltar para a Lista", "Index")
+
+        @Html.ActionLink("Início", "Index", "Home")
+    </div>
+        }
+    </div>
+</body>
+</html>

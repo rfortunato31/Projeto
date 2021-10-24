@@ -1,0 +1,44 @@
+﻿@model Clima.Models.Cidade
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalhes</title>
+</head>
+<body>
+    <div>
+        <h4>Cidade</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+    
+            <dt>
+                Estado
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Estado.Uf)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Voltar para a lista", "Index")
+        @Html.ActionLink("Início", "Index", "Home")
+
+    </p>
+</body>
+</html>

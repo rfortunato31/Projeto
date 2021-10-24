@@ -1,0 +1,67 @@
+﻿@model Clima.Models.PevisaoClima
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalhes</title>
+</head>
+<body>
+    <div>
+        <h4>Previsão</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Clima)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Clima)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CidadeId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CidadeId)
+            </dd>
+    
+            <dt>
+                Data
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DataPrevisao)
+            </dd>
+    
+            <dt>
+               Temp Min
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TemperaturaMinima)
+            </dd>
+    
+            <dt>
+                Temp Max
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TemperaturaMaxima)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Voltar para a lista", "Index")
+        @Html.ActionLink("Início", "Index", "Home")
+    </p>
+</body>
+</html>

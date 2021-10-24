@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Clima.Models.PevisaoClima>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Previsão</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Criar Novo", "Create")
+        @Html.ActionLink("Início", "Index", "Home")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Clima)
+            </th>
+            <th>
+                Cidade
+            </th>
+            <th>
+                Data
+            </th>
+            <th>
+                Temperatura Mínima
+            </th>
+            <th>
+                Temperatura Máxima
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clima)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CidadeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataPrevisao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TemperaturaMinima)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TemperaturaMaxima)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Excluir", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
